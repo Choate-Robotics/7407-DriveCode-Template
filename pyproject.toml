@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "7407-DRIVECODE-22-23"
+version = "0.1.0"
+description = "Team 7407 Wired Boars 2022-2023 Robot Code"
+authors = ["Sidharth Rao <sidharthmrao@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+robotpy = "^2022.4.8"
+robotpy-commands-v2 = "^2022.4.1"
+robotpy-ctre = "^2022.1.1"
+robotpy-hal = "^2022.4.1"
+robotpy-installer = "^2022.1.1"
+robotpy-rev = "^2022.0.1"
+robotpy-toolkit-7407 = "^0.5.2"
+robotpy-wpilib-utilities = "^2022.0.5"
+robotpy-wpimath = "^2022.4.1"
+robotpy-wpiutil = "^2022.4.1"
+wpilib = "^2022.4.1"
+pre-commit = "^2.20.0"
+black = "^22.6.0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
