@@ -180,6 +180,14 @@ colors = ["colorama (>=0.4.3,<0.5.0)"]
 plugins = ["setuptools"]
 
 [[package]]
+name = "logger"
+version = "1.4"
+description = "Python logging helper"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "mccabe"
 version = "0.6.1"
 description = "McCabe checker, plugin for flake8"
@@ -673,7 +681,7 @@ robotpy-wpiutil = ">=2022.4.1.1,<2023.0.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "72cb8b1635962007968d7301a5d284d65159c35468a63f3b918e3d96c2367735"
+content-hash = "7c06349fbe7bf81d62251fbed6587452d88aae0ce28d7810e44ad89135fd791b"
 
 [metadata.files]
 atomicwrites = []
@@ -750,6 +758,7 @@ iniconfig = [
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
 ]
 isort = []
+logger = []
 mccabe = []
 mypy-extensions = []
 nodeenv = [
