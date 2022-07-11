@@ -3,6 +3,30 @@
 
 Team 7407 Wired Boars 2022-2023 Robot Code
 
+## File Tree:
+```
+7407-DriveCode-22-23
+├── autonomous (Contains autonomous routines for robot)
+├── command (Contains commands for command scheduling)
+│   └── __init__.py
+├── oi (Operator Interface)
+│   ├── OI.py (Contains keymappings to commands)
+│   └── keymap.py (Contains controller keymaps for each subsystem and controller)
+├── sensors (Contains sensor classes)
+│   └── __init__.py (Contains sensor classes)
+├── subsystem (Contains subsystem classes)
+│   └── __init__.py
+├── utils (Contains utilities like optimizations, conversions)
+│   └── __init__.py
+├── .gitignore (Filters out unnecessary files, for example *.pyc)
+├── README.md (This file)
+├── constants.py (Variables held constant throughout code.)
+├── config.py (Easy configurations for entire robot.)
+├── poetry.lock (DO NOT EDIT. Use "poetry add {package}" to add packages.
+├── pyproject.toml (DO NOT EDIT.)
+├── robot.py (Central program, controls everything.)
+└── robot_systems.py (Contains initialized sensors and subsystems)
+```
 
 
 ## Getting Started:
