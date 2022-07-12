@@ -3,6 +3,30 @@
 
 Team 7407 Wired Boars 2022-2023 Robot Code
 
+## File Tree:
+```
+7407-DriveCode-22-23
+├── autonomous (Contains autonomous routines for robot)
+├── command (Contains commands for command scheduling)
+│   └── __init__.py
+├── oi (Operator Interface)
+│   ├── OI.py (Contains keymappings to commands)
+│   └── keymap.py (Contains controller keymaps for each subsystem and controller)
+├── sensors (Contains sensor classes)
+│   └── __init__.py (Contains sensor classes)
+├── subsystem (Contains subsystem classes)
+│   └── __init__.py
+├── utils (Contains utilities like optimizations, conversions)
+│   └── __init__.py
+├── .gitignore (Filters out unnecessary files, for example *.pyc)
+├── README.md (This file)
+├── constants.py (Variables held constant throughout code.)
+├── config.py (Easy configurations for entire robot.)
+├── poetry.lock (DO NOT EDIT. Use "poetry add {package}" to add packages.
+├── pyproject.toml (DO NOT EDIT.)
+├── robot.py (Central program, controls everything.)
+└── robot_systems.py (Contains initialized sensors and subsystems)
+```
 
 
 ## Getting Started:
@@ -43,6 +67,10 @@ poetry install
 
 ```
 
+### Deploying Code:
+Connect to the robot's wifi.
+``python robot.py deploy``
+If absolutely necessary, use ``python robot.py deploy --no-version-check`` to avoid WPILib version issues on the robot.
 
 
 ## Best Practices
@@ -75,6 +103,10 @@ Comment, comment, comment!
  - Use single line comments for any function without parameters with a description of the function.
  - Use single line comments before any complex function to describe how it works, and to the right of any line or variable that is very complicated.
  - Use TODO comments freely.
+
+### Adding libraries
+Always use ``poetry add {library}`` to add libraries. This ensures that libraries are compatible and allows everyone to work easier.
+Never, ever, edit poetry.lock or pyproject.toml manually.
 
 ### Branching
 To branch, first make sure that all your local changes are committed. If you would like to abandon the changes, run ``git reset --hard``. Be very careful with resetting.
