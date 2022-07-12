@@ -67,6 +67,10 @@ poetry install
 
 ```
 
+### Deploying Code:
+Connect to the robot's wifi.
+``python robot.py deploy``
+If absolutely necessary, use ``python robot.py deploy --no-version-check`` to avoid WPILib version issues on the robot.
 
 
 ## Best Practices
@@ -99,6 +103,10 @@ Comment, comment, comment!
  - Use single line comments for any function without parameters with a description of the function.
  - Use single line comments before any complex function to describe how it works, and to the right of any line or variable that is very complicated.
  - Use TODO comments freely.
+
+### Adding libraries
+Always use ``poetry add {library}`` to add libraries. This ensures that libraries are compatible and allows everyone to work easier.
+Never, ever, edit poetry.lock or pyproject.toml manually.
 
 ### Branching
 To branch, first make sure that all your local changes are committed. If you would like to abandon the changes, run ``git reset --hard``. Be very careful with resetting.
