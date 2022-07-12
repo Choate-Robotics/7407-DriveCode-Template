@@ -3,13 +3,13 @@ import wpilib
 
 import autonomous
 import command
-from oi.OI import OI
-import sensors
-import subsystem
-import utils
 import config
 import constants
 import robot_systems
+import sensors
+import subsystem
+import utils
+from oi.OI import OI
 
 
 class Robot(wpilib.TimedRobot):

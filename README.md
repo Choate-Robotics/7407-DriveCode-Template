@@ -108,6 +108,22 @@ Comment, comment, comment!
 Always use ``poetry add {library}`` to add libraries. This ensures that libraries are compatible and allows everyone to work easier.
 Never, ever, edit poetry.lock or pyproject.toml manually.
 
+### Committing, Pushing, and Pulling
+To commit:
+```
+git add .
+git commit -m "Message"
+```
+To push:
+```
+git push
+```
+To pull:
+```
+git fetch
+git pull
+```
+
 ### Branching
 To branch, first make sure that all your local changes are committed. If you would like to abandon the changes, run ``git reset --hard``. Be very careful with resetting.
 To branch: ``git branch {branch name}
