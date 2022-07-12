@@ -3,7 +3,7 @@ import wpilib
 
 import autonomous
 import command
-import oi
+from oi.OI import OI
 import sensors
 import subsystem
 import utils
@@ -18,8 +18,8 @@ class Robot(wpilib.TimedRobot):
 
     def robotInit(self):
         # Initialize Operator Interface
-        oi.OI.OI.init()
-        oi.OI.OI.map_controls()
+        OI.init()
+        OI.map_controls()
 
     # Initialize subsystems
 
@@ -35,6 +35,12 @@ class Robot(wpilib.TimedRobot):
         pass
 
     def autonomousPeriodic(self):
+        pass
+
+    def disabledInit(self) -> None:
+        pass
+
+    def disabledPeriodic(self) -> None:
         pass
 
 
