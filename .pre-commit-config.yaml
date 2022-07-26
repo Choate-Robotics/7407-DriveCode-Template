@@ -32,17 +32,11 @@ repos:
     entry: black
     types: [python]
 
-  - id: mypy
-    name: mypy
-    stages: [commit]
-    language: system
-    entry: mypy
-    types: [python]
-
   - id: flake8
     name: flake8
     stages: [commit]
     language: system
     entry: flake8
     types: [python]
+    args: ['--max-line-length=120']
     exclude: setup.py
