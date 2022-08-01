@@ -31,6 +31,21 @@ Team 7407 Wired Boars 2022-2023 Robot Code
 
 ## Getting Started:
 
+### Clone the repository code onto your computer:
+
+```
+
+git clone https://github.com/Choate-Robotics/7407-DriveCode-22-23.git
+
+```
+If you prefer ssh:
+
+```
+
+git clone git@github.com:Choate-Robotics/7407-DriveCode-22-23.git
+
+```
+
 ### If you don't have Poetry installed already:
 
 #### Linux and Mac
@@ -40,6 +55,7 @@ Team 7407 Wired Boars 2022-2023 Robot Code
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
 ```
+You might have to replace "python" at the end with "python3" depending on how python is configured in your system.
 
 #### Windows Powershell
 
