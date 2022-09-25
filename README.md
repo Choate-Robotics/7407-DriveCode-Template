@@ -52,7 +52,7 @@ git clone git@github.com:Choate-Robotics/7407-DriveCode-22-23.git
 
 ```
 
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+curl -k https://install.python-poetry.org/ | python3 - 
 
 ```
 You might have to replace "python" at the end with "python3" depending on how python is configured in your system.
