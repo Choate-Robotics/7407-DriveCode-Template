@@ -1,7 +1,7 @@
 
 # 7407-DriveCode-{TEMPLATE}
 
-Team 7407 Wired Boars 2022-2023 Robot Code
+Team 7407 Wired Boars {TEMPLATE} Robot Code
 
 ## File Tree:
 ```
