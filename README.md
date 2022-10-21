@@ -168,6 +168,8 @@ To integrate a branch with branch **Main**,  create a pull-request with the same
 ### Debugging:
 #### Logger
  - USE LOGGER! It makes it easier on everyone to debug.
+#### Smart Dashboard/Shuffleboard
+ - Shuffleboard is preferred over the Smart Dashboard and console for debugging. To use shuffleboard, just push a string, number, boolean, or similar value to the SmartDashboard using "wpilib.SmartDashboard.pushNumber ..." etc. The value is then accessible through ShuffleBoard.
 
 ## Resources
  - [RobotPy Documentation](https://robotpy.readthedocs.io/en/stable/) We love RobotPy!
