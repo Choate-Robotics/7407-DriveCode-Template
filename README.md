@@ -1,11 +1,11 @@
 
-# 7407-DriveCode-22-23
+# 7407-DriveCode-{TEMPLATE}
 
 Team 7407 Wired Boars 2022-2023 Robot Code
 
 ## File Tree:
 ```
-7407-DriveCode-22-23
+7407-DriveCode-Template
 ├── autonomous (Contains autonomous routines for robot)
 ├── command (Contains commands for command scheduling)
 │   └── __init__.py
@@ -35,14 +35,14 @@ Team 7407 Wired Boars 2022-2023 Robot Code
 
 ```
 
-git clone https://github.com/Choate-Robotics/7407-DriveCode-22-23.git
+git clone https://github.com/Choate-Robotics/7407-DriveCode-Template.git
 
 ```
 If you prefer ssh:
 
 ```
 
-git clone git@github.com:Choate-Robotics/7407-DriveCode-22-23.git
+git clone git@github.com:Choate-Robotics/7407-DriveCode-Template.git
 
 ```
 

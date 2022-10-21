@@ -1,7 +1,6 @@
 import commands2
+import ctre
 import wpilib
-
-import autonomous
 import command
 import config
 import constants
@@ -11,6 +10,7 @@ import subsystem
 import utils
 from oi.OI import OI
 
+from robotpy_toolkit_7407.motors import TalonFX
 
 class Robot(wpilib.TimedRobot):
     def __init__(self):
@@ -26,11 +26,11 @@ class Robot(wpilib.TimedRobot):
     # Pneumatics
 
     def teleopInit(self):
-        pass
+        a = ctre.VictorSPX(1)
+        a.set(ctre.ControlMode.PercentOutput, .5)
 
     def teleopPeriodic(self):
         pass
-
     def autonomousInit(self):
         pass
 
