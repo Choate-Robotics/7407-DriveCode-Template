@@ -20,6 +20,11 @@ class Robot(wpilib.TimedRobot):
         # Initialize Operator Interface
         OI.init()
         OI.map_controls()
+        period = .03
+        commands2.CommandScheduler.getInstance().setPeriod(period)
+        
+    def robotPeriodic(self):
+        commands2.CommandScheduler.getInstance().run()
 
     # Initialize subsystems
 
