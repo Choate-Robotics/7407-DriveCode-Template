@@ -8,7 +8,7 @@ authors = ["Sidharth Rao <sidharthmrao@gmail.com>"]
 python=">=3.7,<3.12"
 robotpy = {version = "2023.0.0b7", extras = ["commands2"]}
 robotpy-photonvision = "2023.1.1b7"
-robotpy-toolkit-7407 = "^0.5.12"
+robotpy-toolkit-7407 = "^0.5.13"
 wpilib = "2023.1.1.0"
 pre-commit = "^2.20.0"
 black = "^22.6.0"
