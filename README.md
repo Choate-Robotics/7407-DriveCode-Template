@@ -31,7 +31,71 @@ Team 7407 Wired Boars {TEMPLATE} Robot Code
 
 ## Getting Started:
 
-### Clone the repository code onto your computer:
+You will need to have at least python 3.10 installed on your computer. 
+
+
+### Apple Silicon ARM Mac
+
+If you have a Apple Silicon ARM mac, at some point you will be asked to intall Rosetta, you will be asked to install it at some point. It is required, so go ahead when it asks.
+
+If you want to know if Rosetta is installed you can look at the folder ```usr/libexec/Rosetta```. If there is any files in this folder then you have Rosetta installed.
+
+You will need to intall the intel x64 version python 3.10 on your computer. 
+
+#### Install Homebrew
+
+You will need to install homebrew first.
+
+```
+arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+```
+
+#### Install Python
+All the intel versions of all software on the Mac is in the ```/usr/local/bin``` folder. You will need to be in that directory to run any of the intel versions on your Mac. After getting into ```/usr/local/bin``` then use homebrew to install at least python 3.10.
+```
+
+arch -x86_64 ./brew install python@3.10
+
+```
+
+If you want a convenient alias for intel python, run the next command with the successful python from the last command:
+
+```
+ echo "alias python86='arch -x86_64 /usr/local/bin/python3.10-intel64'" > ~/.zshrc
+```
+
+
+#### Install Poetry
+
+```
+arch -x86_64 curl -sSL https://install.python-poetry.org | ./python3-intel64 -
+```
+
+You may get an error when you try to install poetry:
+
+```
+urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)>
+```
+
+If this happens you need go to spotlight and run ```Install Certificates.Command```.  Then you will be able to install poetry.
+
+After poetry installation is complete, change into a directory where you want python programs
+
+```
+      git clone https://github.com/Choate-Robotics/7407-DriveCode-Template.git
+      cd 7407-DriveCode-Template
+      poetry update
+ ```
+   
+ To open virtualenv shell (Run this every time you open a new terminal in that folder)
+ ```
+      python86 -m poetry shell
+ ```
+
+### Non-Mac Directions
+
+#### Clone the repository code onto your computer:
 
 ```
 
