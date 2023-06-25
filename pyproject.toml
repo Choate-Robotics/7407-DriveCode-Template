@@ -2,7 +2,7 @@
 name = "7407-DRIVECODE-TEMPLATE"
 version = "0.1.0"
 description = "Team 7407 Wired Boars 2022-2023 Robot Code"
-authors = ["Sidharth Rao <sidharthmrao@gmail.com>"]
+authors = ["Sebastian Plunkett <gamebot60000@gmail.com>","Sidharth Rao <sidharthmrao@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">3.9,<3.12"

@@ -16,13 +16,17 @@ Team 7407 Wired Boars {TEMPLATE} Robot Code
 │   └── __init__.py (Contains sensor classes)
 ├── subsystem (Contains subsystem classes)
 │   └── __init__.py
+├── tests (Contains custom tests for code verification)
+│   └── __init__.py
+│   └── conftest.py (Contains test fixtures)
+│   └── test_examples.py (Contains test examples for writing tests)
 ├── utils (Contains utilities like optimizations, conversions)
 │   └── __init__.py
 ├── .gitignore (Filters out unnecessary files, for example *.pyc)
 ├── README.md (This file)
 ├── constants.py (Variables held constant throughout code.)
 ├── config.py (Easy configurations for entire robot.)
-├── poetry.lock (DO NOT EDIT. Use "poetry add {package}" to add packages.
+├── poetry.lock (DO NOT EDIT. Use "poetry add {package}" to add packages.)
 ├── pyproject.toml (DO NOT EDIT.)
 ├── robot.py (Central program, controls everything.)
 └── robot_systems.py (Contains initialized sensors and subsystems)
