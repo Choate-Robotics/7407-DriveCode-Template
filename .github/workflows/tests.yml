@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: 3.9
 
-            - name: Install Poetry
+      - name: Install Poetry
         uses: dschep/install-poetry-action@v1.2
 
       - name: Cache Poetry virtualenv
