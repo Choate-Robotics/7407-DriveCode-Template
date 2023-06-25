@@ -69,4 +69,5 @@ jobs:
       # And finally run tests. I'm using pytest and all my pytest config is in my `pyproject.toml`
       # so this line is super-simple. But it could be as complex as you need.
       - name: Run Tests
-      - run: poetry run py -3 robot.py test --builtin
+
+      - run: poetry run py -3 robot.py test
