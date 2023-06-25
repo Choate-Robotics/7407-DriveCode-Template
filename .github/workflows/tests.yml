@@ -18,16 +18,16 @@ jobs:
         with:
           python-version: 3.9
 
-      # # Cache the installation of Poetry itself, e.g. the next step. This prevents the workflow
-      # # from installing Poetry every time, which can be slow. Note the use of the Poetry version
-      # # number in the cache key, and the "-0" suffix: this allows you to invalidate the cache
-      # # manually if/when you want to upgrade Poetry, or if something goes wrong. This could be
-      # # mildly cleaner by using an environment variable, but I don't really care.
-      # - name: cache poetry install
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: ~/.local
-      #     key: poetry-1.1.12-0
+      # Cache the installation of Poetry itself, e.g. the next step. This prevents the workflow
+      # from installing Poetry every time, which can be slow. Note the use of the Poetry version
+      # number in the cache key, and the "-0" suffix: this allows you to invalidate the cache
+      # manually if/when you want to upgrade Poetry, or if something goes wrong. This could be
+      # mildly cleaner by using an environment variable, but I don't really care.
+      - name: cache poetry install
+        uses: actions/cache@v2
+        with:
+          path: ~/.local
+          key: poetry
 
       # Install Poetry. You could do this manually, or there are several actions that do this.
       # `snok/install-poetry` seems to be minimal yet complete, and really just calls out to
@@ -54,11 +54,11 @@ jobs:
           path: .venv
           key: pydeps-${{ hashFiles('**/poetry.lock') }}
 
-      # # Install dependencies. `--no-root` means "install all dependencies but not the project
-      # # itself", which is what you want to avoid caching _your_ code. The `if` statement
-      # # ensures this only runs on a cache miss.
-      # - run: poetry install --no-interaction # --no-root
-      #   if: steps.cache-deps.outputs.cache-hit != 'true'
+      # Install dependencies. `--no-root` means "install all dependencies but not the project
+      # itself", which is what you want to avoid caching _your_ code. The `if` statement
+      # ensures this only runs on a cache miss.
+      - run: poetry install --no-interaction --no-root
+        if: steps.cache-deps.outputs.cache-hit != 'true'
 
       # Now install _your_ project. This isn't necessary for many types of projects -- particularly
       # things like Django apps don't need this. But it's a good idea since it fully-exercises the
@@ -68,4 +68,6 @@ jobs:
 
       # And finally run tests. I'm using pytest and all my pytest config is in my `pyproject.toml`
       # so this line is super-simple. But it could be as complex as you need.
-      - run: poetry run pytest
+      - run: poetry shell
+
+      - run: py -3 robot.py test --builtin
