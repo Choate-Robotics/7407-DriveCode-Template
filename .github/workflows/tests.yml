@@ -1,10 +1,9 @@
 Name: Tests
 
 on:
-  - push
+  push:
   pull_request:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   test:
