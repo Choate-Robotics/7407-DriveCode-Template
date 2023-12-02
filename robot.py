@@ -31,8 +31,7 @@ class Robot(wpilib.TimedRobot):
     # Pneumatics
 
     def teleopInit(self):
-        a = ctre.VictorSPX(1)
-        a.set(ctre.ControlMode.PercentOutput, .5)
+        pass
 
     def teleopPeriodic(self):
         pass
