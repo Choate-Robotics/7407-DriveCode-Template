@@ -1,4 +1,4 @@
-from pyfrc_test import *
+from pyfrc.test import *
 import runpy
 
 def test_path():
