@@ -1,0 +1,14 @@
+{
+  "NTProvider": {
+    "types": {
+      "/LiveWindow/Ungrouped/Scheduler": "Scheduler"
+    }
+  },
+  "NetworkTables": {
+    "transitory": {
+      "FMSInfo": {
+        "open": true
+      }
+    }
+  }
+}
