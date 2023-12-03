@@ -24,7 +24,7 @@ class Robot(wpilib.TimedRobot):
         self.log._robot_log_setup()
         # Initialize Operator Interface
         if config.DEBUG_MODE == True:
-            self.log.warn("WARNING: DEBUG MODE IS ENABLED")
+            self.log.setup("WARNING: DEBUG MODE IS ENABLED")
         OI.init()
         OI.map_controls()
         period = .03
