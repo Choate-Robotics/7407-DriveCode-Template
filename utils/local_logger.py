@@ -1,6 +1,6 @@
 from wpilib import DataLogManager, Timer, DriverStation, TimedRobot
 from wpilib.deployinfo import getDeployData
-
+from wpiutil.log import StringLogEntry
 
 
 class BColors:
@@ -22,11 +22,13 @@ class LocalLogger():
         self.name = name
         self.dlm = DataLogManager
         self.dlm.start('logs/')
-        self.log_custom = self.dlm.getLog()
+        self.log_data = self.dlm.getLog()
+        self.custom_entry = StringLogEntry(self.log_data, f'messages/{self.name}')
         
     def _robot_log_setup(self):
         self.get_deploy_info()
         self.log_driverstation(True)
+        self.complete('Robot logging initialized')
         
     def get_deploy_info(self):
         
@@ -53,16 +55,30 @@ class LocalLogger():
             self.complete(string)
         
     def log_driverstation(self, joysticks: bool):
-        DriverStation.startDataLog(self.log_custom, joysticks)
+        DriverStation.startDataLog(self.log_data, joysticks)
+        self.info('DriverStation logging started')
+        if joysticks:
+            self.info('Joystick logging started')
         
-    def pms(self):
+    def pms(self, colors: bool = True):
+        
+        sim_color = ''
+        header_color = ''
+        time_color = ''
+        end_color = ''
+        
+        if colors:
+            sim_color = BColors.TEST
+            header_color = BColors.HEADER
+            time_color = BColors.TIME
+            end_color = BColors.ENDC
         
         mode = 'DISABLED'
-        is_sim = f'{BColors.TEST}SIMULATION{BColors.ENDC}' if TimedRobot.isSimulation() else ''
+        is_sim = f'{sim_color}SIMULATION{end_color}' if TimedRobot.isSimulation() else ''
         if DriverStation.isEnabled():
             mode = 'TELEOP' if DriverStation.isTeleopEnabled() else 'AUTONOMOUS'
             
-        mode = f'{BColors.HEADER}{mode}{BColors.ENDC}'
+        mode = f'{header_color}{mode}{end_color}'
         
         combined = mode + "  " + is_sim 
             
@@ -72,30 +88,39 @@ class LocalLogger():
             time = Timer.getMatchTime()
             time = f'{time:.3f}'
         
-        return f'  {BColors.TIME}{time}  {combined}{BColors.ENDC}'
-        
-    def message(self, message):
-        self.dlm.log(f'{self.pms()}{self.name}: {message}')
+        return f'  {time}{time_color}  {combined}{end_color}'
         
     def _format(self, type):
         return f'  |  {type}  |  '
         
+    def _format_std_out(self, color: BColors, type, message):
+        return f'{self.pms()}{color}{type}{self.name}: {message}{BColors.ENDC}'
+    
+    def __log(self, message, type, color):
+        print(self._format_std_out(color, type, message))
+        self.custom_entry.append(f'{self.pms(False)}{type}{self.name}: {message}')
+        
+    def message(self, message):
+        
+        self.custom_entry.append(f'{self.pms()}{self.name}: {message}')
+        
+        
     def info(self, message):
         info = self._format('INFO')
-        self.dlm.log(f'{self.pms()}{BColors.OKBLUE}{info}{self.name}: {message}{BColors.ENDC}')
+        self.__log(message, info, BColors.OKBLUE)
         
     def debug(self, message):
         debug = self._format('DEBUG')
-        self.dlm.log(f'{self.pms()}{BColors.OKCYAN}{debug}{self.name}: {message}{BColors.ENDC}')
+        self.__log(message, debug, BColors.OKCYAN)
         
     def complete(self, message):
         done = self._format('DONE')
-        self.dlm.log(f'{self.pms()}{BColors.OKGREEN}{done}{self.name}: {message}{BColors.ENDC}')
+        self.__log(message, done, BColors.OKGREEN)
         
     def warn(self, message):
         warn = self._format('WARN')
-        self.dlm.log(f'{self.pms()}{BColors.WARNING}{warn}{self.name}: {message}{BColors.ENDC}')
+        self.__log(message, warn, BColors.WARNING)
     
     def error(self, message):
         error = self._format('ERROR')
-        self.dlm.log(f'{self.pms()}{BColors.FAIL}{error}{self.name}: {message}{BColors.ENDC}')
+        self.__log(message, error, BColors.FAIL)
