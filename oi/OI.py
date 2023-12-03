@@ -1,14 +1,17 @@
-from robotpy_toolkit_7407.utils import logger
 
-logger.info("Hi, I'm OI!")
+from utils import LocalLogger
 
+log = LocalLogger("OI")
 
 class OI:
+    
+    
+    
     @staticmethod
     def init() -> None:
-        logger.info("Initializing OI...")
+        log.info("Initializing OI...")
 
     @staticmethod
     def map_controls():
-        logger.info("Mapping controls...")
+        log.info("Mapping controls...")
         pass
