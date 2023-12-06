@@ -13,7 +13,7 @@ import utils
 from oi.OI import OI
 
 
-class Robot(wpilib.TimedRobot):
+class _Robot(wpilib.TimedRobot):
     def __init__(self):
         super().__init__()
         
@@ -34,11 +34,18 @@ class Robot(wpilib.TimedRobot):
         # Initialize subsystems
         def init_subsystems():
             subsystems: list[Subsystem] = list(
-                {k: v for k, v in Robot.__dict__.items() if isinstance(v, Subsystem)}.values()
+                {k: v for k, v in Robot.__dict__.items() if isinstance(v, Subsystem) and hasattr(v, 'init')}.values() 
             )
+            
+            # sensors: list = list(
+            #     {k: v for k, v in Sensors.__dict__.items() if isinstance(v, sensors.Sensor) and hasattr(v, 'init')}.values()
+            # )
 
             for subsystem in subsystems:
                 subsystem.init()
+                
+            # for sensor in sensors:
+            #     sensor.init()
                 
         if config.DEBUG_MODE == False:
             try:
@@ -97,4 +104,4 @@ class Robot(wpilib.TimedRobot):
 
 
 if __name__ == "__main__":
-    wpilib.run(Robot)
+    wpilib.run(_Robot)
