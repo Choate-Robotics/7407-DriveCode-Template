@@ -35,12 +35,16 @@ Team 7407 Wired Boars {TEMPLATE} Robot Code
 
 ## Getting Started:
 
-You will need to have at least python 3.10 installed on your computer. 
+Check out our documentation [here](https://choate-robotics.github.io/Programming-SOPs/).
+
+
+
+<!-- You will need to have at least python 3.10 installed on your computer. 
 
 
 ### Apple Silicon ARM Mac
 
-If you have a Apple Silicon ARM mac, at some point you will be asked to intall Rosetta, you will be asked to install it at some point. It is required, so go ahead when it asks.
+If you have an Apple Silicon ARM mac, at some point you will be asked to intall Rosetta, you will be asked to install it at some point. It is required, so go ahead when it asks.
 
 If you want to know if Rosetta is installed you can look at the folder ```usr/libexec/Rosetta```. If there is any files in this folder then you have Rosetta installed.
 
@@ -243,4 +247,4 @@ To integrate a branch with branch **Main**,  create a pull-request with the same
  - [RobotPy Documentation](https://robotpy.readthedocs.io/en/stable/) We love RobotPy!
  - [WPILib Documentation](https://docs.wpilib.org/en/stable/index.html) RobotPy is just a wrapper for the WPILib C++ Code. Most of the structure remains the same.
  - [Chief Delphi](https://www.chiefdelphi.com/) Many a sensor problem have been fixed by looking here.
- - [7407 DriveCode-2021-Python](https://github.com/Choate-Robotics/7407-DriveCode-2021-Python) Worlds level code!
+ - [7407 DriveCode-2021-Python](https://github.com/Choate-Robotics/7407-DriveCode-2021-Python) Worlds level code! -->
